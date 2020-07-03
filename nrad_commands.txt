@@ -1,0 +1,96 @@
+Commands that can be sent to Nrad (see examples below for parameters etc.)
+
+COMMAND_EXIT              = "exit"
+COMMAND_RECONNECT         = "reconnect"
+COMMAND_LOGIN             = "logon"
+COMMAND_STREAM_START      = "start_stream"
+COMMAND_STREAM_STOP       = "stop_stream"
+COMMAND_SEND_TEXT_MESSAGE = "send_text_message"
+COMMAND_SEND_IMAGE        = "send_image"
+COMMAND_SEND_LOCATION     = "send_location"
+COMMAND_SET_PLAYBACK      = "set_playback"
+COMMAND_MUTE_PLAYBACK     = "mute_playback"
+COMMAND_UNMUTE_PLAYBACK   = "unmute_playback"
+COMMAND_SET_VOLUME_FACTOR = "set_volume_factor"
+
+
+Error messages that Nrad will send back:
+ERROR_CONNECTION_SETUP    = "connection_setup"
+ERROR_NOT_AUTHORIZED      = "not authorized"
+ERROR_INVALID_PASSWORD    = "invalid_password"
+ERROR_INVALID_USERNAME    = "invalid_username"
+ERROR_AUDIO_CLIENT_SETUP  = "audio_client_setup"
+ERROR_AUDIO_ENCODE        = "audio_encode"
+ERROR_AUDIO_DECODE        = "audio_decode"
+ERROR_JSON_ENCODE         = "json_encode"
+ERROR_SENDING_COMMAND     = "sending_command"
+ERROR_WEBSOCKET_CLOSED    = "websocket_closed"
+ERROR_WEBSOCKET_READ      = "websocket_read"
+ERROR_WEBSOCKET_READ_TIMEOUT = "websocket_read_timeout"
+ERROR_WEBSOCKET_WRITE     = "websocket_write"
+ERROR_TRANSMIT_BUSY       = "transmit_busy"
+ERROR_TRANSMIT_FAILED     = "transmit_failed"
+ERROR_TRANSMIT_NO_STREAM  = "transmit_no_stream"
+ERROR_TRANSMIT_BOUNCE     = "woodpecker prohibited"
+
+
+Events that NRad will send:
+EVENT_ON_SETUP            = "on_setup"
+EVENT_ON_RX               = "on_rx"
+EVENT_ON_TX               = "on_tx"
+EVENT_ON_TX_START         = "on_tx_start"
+EVENT_ON_TX_STOP          = "on_tx_stop"
+EVENT_ON_CONNECT          = "on_connect"
+EVENT_ON_DISCONNECT       = "on_disconnect"
+EVENT_ON_LOGIN            = "on_login"
+EVENT_ON_STREAM_START     = "on_stream_start"
+EVENT_ON_STREAM_STOP      = "on_stream_stop"
+EVENT_ON_CHANNEL_STATUS   = "on_channel_status"
+EVENT_ON_ERROR            = "on_error"
+EVENT_ON_LOCATION         = "on_location"
+EVENT_ON_LOCATION_ACK     = "on_location_ack"
+EVENT_ON_IMAGE            = "on_image"
+EVENT_ON_IMAGE_THUMBNAIL  = "on_image_thumbnail"
+EVENT_ON_IMAGE_FILE       = "on_image_file"
+EVENT_ON_TEXT_MESSAGE     = "on_text_message"
+EVENT_ON_TEXT_MESSAGE_ACK = "on_text_message_ack"
+EVENT_ON_EXIT             = "on_exit"
+EVENT_ON_KEEPALIVE        = "on_keepalive"
+EVENT_ON_NRAD_STATUS      = "on_nrad_status"
+
+
+Status value provided with the "on_nrad_status" event:
+STATUS_WS_UNKNOWN         = 0
+STATUS_WS_DISCONNECT      = 1
+STATUS_WS_CONNECT         = 2
+STATUS_WS_LOGIN_SENT      = 3
+STATUS_WS_LOGIN_OK        = 4
+STATUS_WS_CHANNEL_STATUS  = 5
+STATUS_WS_CONNECT_LOST    = 6
+STATUS_WS_NOT_AUTHORIZED  = 7
+
+
+Example commands you can send to nrad:
+{"command": "logon", "channel": "nrad", "username": "nrad", "password": "secretstring"}
+{"command": "start_stream"}
+{"command": "stop_stream"}
+{"command": "exit"}
+{"command": "reconnect"}
+{"command": "mute_playback"}
+{"command": "unmute_playback"}
+{"command": "set_volume_factor", "sender": "emm386.exe", "value": 100}
+{"command": "send_text_message", "text": "Hello World"}
+{"command": "send_location", "latitude":42.3990123, "longitude":-83.0602116, "formatted_address":"Joseph Campau & Trowbridge", "accuracy":10.01}
+{"command": "set_playback", "sample_type": "ptt_start", "sample_file": "/home/spag/Projects/go/nrad/audio/ptt_start.pcm"}
+{"command": "set_playback", "sample_type": "ptt_error", "sample_file": "/home/spag/Projects/go/nrad/audio/ptt_err.pcm"}
+{"command": "set_vox_threshold", "value": 2000}
+{"command": "set_vox_threshold", "value": 0}
+{"command": "get_audio_sources"}
+{"command": "set_audio_source", "id": "CH16.monitor"}
+
+Some events that nrad will sent to stdout:
+{"command":"on_connect","success":true}
+{"command":"on_nrad_status","status":2}
+{"command":"on_tx","stream_id":15758,"samples":1920,"rms":4093}
+{"command":"on_exit","success":true}
+

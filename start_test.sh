@@ -4,7 +4,7 @@ FREQUENCY="156.0"
 GAIN="50"
 SQUELCH="280"
 USER="VHF Channel 0"
-PASSWORD="RNLIhmcg999"
+PASSWORD="password"
 CHANNEL="VHF CH0"
 AUDIO="alsa_output.platform-bcm2835_audio.stereo-fallback.monitor"
 

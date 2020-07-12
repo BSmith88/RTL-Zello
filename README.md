@@ -10,7 +10,7 @@ RTL SDR to Zello designed to run on a Raspberry Pi
 
 ### Install NPM and RTL-SDR
 
-```sudo apt-get install npm rtl-sdr git```
+```sudo apt-get install npm rtl-sdr git libopusfile0```
 
 ### Install PM2
 

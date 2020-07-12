@@ -3,13 +3,9 @@ RTL SDR to Zello
 
 ##Instructions
 
-Install PM2 
+Install PM2 and RTL-SDR
 
-```sudo apt-get install pm2```
-
-Install RTL-SDR
-
-```sudo apt-get install rtl-sdr```
+```sudo apt-get install pm2 rtl-sdr```
 
 Download files from GitHub
 

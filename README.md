@@ -38,6 +38,10 @@ Paste Private Key into key.txt
 
 ```nano RTL-Zello/RTLZello.sh```
 
+### Start PM2 at boot
+
+```pm2 startup```
+
 ### Run RTlZello.sh using PM2
 
 ```pm2 start RTL-Zello/RTLZello.sh```
@@ -45,9 +49,5 @@ Paste Private Key into key.txt
 ### Save PM2 so RTLZello starts on boot
 
 ```pm2 save```
-
-```pm2 startup```
-
-
 
 # nrad by unmaintained  (https://openrepos.net/users/unmaintained)

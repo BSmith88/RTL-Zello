@@ -46,6 +46,8 @@ Paste Private Key into key.txt
 
 ```pm2 save```
 
+```pm2 startup```
+
 
 
 # nrad by unmaintained  (https://openrepos.net/users/unmaintained)

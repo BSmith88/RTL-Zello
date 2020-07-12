@@ -2,15 +2,25 @@
 RTL SDR to Zello
 
 ##Instructions
+
 Install PM2 
+
 ```sudo apt-get install pm2```
+
 Install RTL-SDR
+
 ```sudo apt-get install rtl-sdr```
+
 Download files from GitHub
+
 ```git clone https://github.com/blackwellj/RTL-Zello.git```
+
 Run RTlZello.sh using PM2
+
 ```pm2 start RTLZello.sh```
+
 Save PM2 so RTLZello starts on boot
+
 ```pm2 save```
 
 Requires a Token

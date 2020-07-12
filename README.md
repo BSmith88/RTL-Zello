@@ -1,4 +1,5 @@
 # RTL-Zello
+
 RTL SDR to Zello designed to run on a Raspberry Pi
 
 ## Instructions
@@ -22,12 +23,16 @@ RTL SDR to Zello designed to run on a Raspberry Pi
 ### Generate Private key and Issuer String for token
 
 Go to https://developers.zello.com/keys and login
-Click on Keys at top of page and then Add Key
-Copy Issuer and Private Key
-```cd RTL-Zello```
-```nano key.txt```
-Paste Private Key into key.txt
 
+Click on Keys at top of page and then Add Key
+
+Copy Issuer and Private Key
+
+```cd RTL-Zello```
+
+```nano key.txt```
+
+Paste Private Key into key.txt
 
 ### Edit RTLZello.sh to change Frequency, Login details and Issuer String
 

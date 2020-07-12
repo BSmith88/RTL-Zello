@@ -1,29 +1,46 @@
 # RTL-Zello
-RTL SDR to Zello
+RTL SDR to Zello designed to run on a Raspberry Pi
 
-##Instructions
+## Instructions
 
-Install PM2 and RTL-SDR
+### Update and upgrade Pi
 
-```sudo apt-get install pm2 rtl-sdr```
+```sudo apt-get update && sudo apt-get upgrade```
 
-Download files from GitHub
+### Install NPM and RTL-SDR
+
+```sudo apt-get install npm rtl-sdr git```
+
+### Install PM2
+
+```sudo npm install pm2@latest -g```
+
+### Download files from GitHub
 
 ```git clone https://github.com/blackwellj/RTL-Zello.git```
 
-Run RTlZello.sh using PM2
+### Generate Private key and Issuer String for token
 
-```pm2 start RTLZello.sh```
+Go to https://developers.zello.com/keys and login
+Click on Keys at top of page and then Add Key
+Copy Issuer and Private Key
+```cd RTL-Zello```
+```nano key.txt```
+Paste Private Key into key.txt
 
-Save PM2 so RTLZello starts on boot
+
+### Edit RTLZello.sh to change Frequency, Login details and Issuer String
+
+```nano RTL-Zello/RTLZello.sh```
+
+### Run RTlZello.sh using PM2
+
+```pm2 start RTL-Zello/RTLZello.sh```
+
+### Save PM2 so RTLZello starts on boot
 
 ```pm2 save```
 
-Requires a Token
-Get private key from https://developers.zello.com/keys
-Create .txt file with private key
-Run ./tokenmanager key.txt issuerstring
 
 
-
-nrad from https://openrepos.net/users/unmaintained
+# nrad by unmaintained  (https://openrepos.net/users/unmaintained)

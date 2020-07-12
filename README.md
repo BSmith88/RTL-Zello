@@ -42,6 +42,8 @@ Paste Private Key into key.txt
 
 ```pm2 startup```
 
+Run Command Generated
+
 ### Run RTlZello.sh using PM2
 
 ```pm2 start RTL-Zello/RTLZello.sh```
